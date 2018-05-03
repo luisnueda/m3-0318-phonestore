@@ -1,0 +1,32 @@
+<h1> Phone details </h1>
+<a [routerLink]="['']"> Back to list </a>
+
+<div *ngIf="phone">
+  <div class="phone-thumbnail">
+    <img height="300" [src]="phone.image" />
+  </div>
+
+  <div class="phone-info">
+    <h2> {{ phone.name }}&nbsp;</h2>
+    <h3> {{ phone.brand }} </h3>
+
+    <div *ngIf="phone.specs.length">
+      <h4> Features </h4>
+      <ul>
+        <li *ngFor="let spec of phone.specs"> {{ spec&nbsp;}} </li>
+      </ul>
+    </div>
+  </div>
+
+  <ul *ngFor="let comment of comments">
+    <li>{{comment.text}}</li>
+  </ul>
+
+  <button (click)="deletePhone()"> Delete </button>
+
+  <div>
+    <input [(ngModel)]="comment">
+    <button (click)="saveComment()"> Save Comment </button>
+  </div>
+
+</div>

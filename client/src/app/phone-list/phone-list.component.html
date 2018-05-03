@@ -1,0 +1,12 @@
+<p>LA LISTA DE TELEFONOS EN OFERTA</p>
+
+
+<div>
+  <div class="phone" *ngFor="let phone of phones">
+    <a [routerLink]="['/phone',phone._id]">
+      <img [src]="phone.image" width=100/>
+    </a>
+    <h3> {{ phone.name }} </h3>
+    <p> {{ phone.brand }} </p>
+  </div>
+</div>
